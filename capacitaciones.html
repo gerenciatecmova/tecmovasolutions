@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TECMOVA SOLUTIONS</title>
+  <title>Capacitaciones - TECMOVA SOLUTIONS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
@@ -68,6 +68,20 @@
 
     main { padding-top: 84px; }
 
+    /* Carrusel */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
     @media (min-width: 768px) {
       #mobileMenu, #overlay { display: none; }
     }
@@ -76,38 +90,27 @@
 <body class="bg-white text-gray-900 font-sans antialiased">
 
   <!-- Header -->
-  <header class="bg-[var(--azul-oscuro)] text-white">
-   <div class="container mx-auto flex justify-between items-center py-1 px-4">
-
-
-      <!-- LOGO + NOMBRE (emoji reemplazado por imagen) -->
-      <h1 class="flex items-center gap-2 text-2xl font-bold">
-        <img 
-          src="imagenes/logo_empresa_index.png"
-          alt="TECMOVA SOLUTIONS"
-          class="h-12 md:h-14 w-auto"
-        >
-        TECMOVA SOLUTIONS
-      </h1>
-
-      <!-- Menú desktop -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-6 font-medium">
-          <li><a href="index.html" class="text-[var(--azul-electrico)] font-semibold">Inicio</a></li>
-          <li><a href="instalaciones.html" class="hover:text-[var(--azul-electrico)]">Instalaciones</a></li>
-          <li><a href="planos.html" class="hover:text-[var(--azul-electrico)]">Planos</a></li>
-          <li><a href="tableros.html" class="hover:text-[var(--azul-electrico)]">Tableros</a></li>
-          <li><a href="#contacto" class="hover:text-[var(--azul-electrico)]">Contacto</a></li>
-        </ul>
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="imagenes/logo_empresa_index.png" alt="TECMOVA SOLUTIONS Logo" class="h-10 mr-3">
+        <span class="text-2xl font-bold text-[var(--azul-oscuro)]">TECMOVA SOLUTIONS</span>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Inicio</a>
+        <a href="#" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Nosotros</a>
+        <a href="capacitaciones.html" class="text-[var(--azul-electrico)] font-semibold">Cursos</a>
+        <a href="#" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Soy Empresa</a>
+        <a href="#" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Aula Virtual</a>
+        <a href="index.html#contacto" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Contacto</a>
       </nav>
-
-      <!-- Botón hamburguesa -->
-      <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="md:hidden text-white">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="md:hidden">
+        <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="text-[var(--azul-oscuro)]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -121,125 +124,381 @@
       </div>
     </div>
     <nav class="mt-2">
-      <a href="index.html" class="font-semibold text-[var(--azul-electrico)]">Inicio</a>
-      <a href="instalaciones.html">Instalaciones</a>
-      <a href="planos.html">Planos</a>
-      <a href="tableros.html">Tableros</a>
-      <a href="#contacto">Contacto</a>
+      <a href="index.html">Inicio</a>
+      <a href="#">Nosotros</a>
+      <a href="capacitaciones.html" class="font-semibold text-[var(--azul-electrico)]">Cursos</a>
+      <a href="#">Soy Empresa</a>
+      <a href="#">Aula Virtual</a>
+      <a href="index.html#contacto">Contacto</a>
     </nav>
   </aside>
 
-  <!-- Hero -->
-  <section class="bg-[var(--azul-electrico)] text-white text-center py-20 px-4">
-    <h2 class="text-3xl md:text-5xl font-bold mb-4">Soluciones Eléctricas Integrales</h2>
-    <p class="text-base md:text-lg mb-6">Instalaciones, planos y tableros eléctricos con los más altos estándares de calidad y seguridad.</p>
-    <div class="flex flex-col md:flex-row gap-4 justify-center">
-      <a href="#contacto" class="bg-white text-[var(--azul-electrico)] font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition">
-        Solicitar Información
-      </a>
-      <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios."
-         target="_blank"
-         class="bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition flex items-center justify-center">
-        💬 WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- Servicios -->
-  <section class="py-16 md:py-20 container mx-auto px-4 md:px-6">
-    <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">
-      Nuestros Servicios
-    </h3>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-
-  <a href="capacitaciones.html"
-     class="block bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]
-            hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
-    <h4 class="text-lg md:text-xl font-semibold mb-3">Capacitaciones</h4>
-    <p class="text-gray-600 text-sm md:text-base">
-      Formación técnica en automatización, electricidad industrial y uso de equipos reales.
-    </p>
-  </a>
-
-  <a href="automatizacion.html"
-     class="block bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]
-            hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
-    <h4 class="text-lg md:text-xl font-semibold mb-3">Servicios de Automatización</h4>
-    <p class="text-gray-600 text-sm md:text-base">
-      Implementación de sistemas automatizados con PLC, sensores y control de procesos industriales.
-    </p>
-  </a>
-
-  <a href="electricos.html"
-     class="block bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]
-            hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
-    <h4 class="text-lg md:text-xl font-semibold mb-3">Servicios Eléctricos</h4>
-    <p class="text-gray-600 text-sm md:text-base">
-      Instalaciones eléctricas seguras y eficientes para entornos residenciales e industriales.
-    </p>
-  </a>
-
-  <a href="generales.html"
-     class="block bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]
-            hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
-    <h4 class="text-lg md:text-xl font-semibold mb-3">Servicios Generales</h4>
-    <p class="text-gray-600 text-sm md:text-base">
-      Soluciones integrales adaptadas a las necesidades de cada proyecto.
-    </p>
-  </a>
-
-</div>
-  </section>
-
-  <!-- Quiénes somos -->
-  <section class="py-16 md:py-20 bg-gray-50 px-4">
-    <div class="container mx-auto text-center">
-      <h3 class="text-2xl md:text-3xl font-bold mb-6 text-[var(--azul-oscuro)]">¿Quiénes somos?</h3>
-      <p class="max-w-3xl mx-auto text-gray-700 text-base md:text-lg leading-relaxed">
-        En <strong>TECMOVA SOLUTIONS</strong> somos un equipo de ingenieros especializados en instalaciones, planos y tableros eléctricos.
-        Nuestro objetivo es brindar soluciones seguras, eficientes y modernas para cada proyecto, garantizando cumplimiento normativo y satisfacción total de nuestros clientes.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="bg-[var(--azul-oscuro)] text-white py-16 md:py-20 px-4">
-    <div class="container mx-auto text-center">
-      <h3 class="text-2xl md:text-3xl font-bold mb-6">Contáctanos</h3>
-      <p class="mb-6 text-gray-300 text-sm md:text-base">Solicita una cotización o asesoría personalizada.</p>
-      <form id="contactForm" class="max-w-xl mx-auto space-y-4">
-        <input type="text" id="name" placeholder="Nombre" class="w-full p-3 rounded-lg text-black" required>
-        <input type="email" id="email" placeholder="Correo" class="w-full p-3 rounded-lg text-black" required>
-        <textarea id="message" placeholder="Mensaje" rows="4" class="w-full p-3 rounded-lg text-black" required></textarea>
-        <button type="submit" class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition w-full md:w-auto">
-          Enviar por WhatsApp
-        </button>
-      </form>
-      <div class="mt-6">
-        <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios."
-           target="_blank"
-           class="inline-block bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition">
-          📲 Escríbenos por WhatsApp
-        </a>
+  <main>
+    <!-- Hero con Carrusel -->
+    <section class="carousel-container relative h-96 md:h-[500px]">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Slide 1 -->
+        <div class="carousel-slide relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a7a4e2e957?w=1920&h=600&fit=crop" alt="Automatización Industrial" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white px-4">
+              <h1 class="text-3xl md:text-5xl font-bold mb-4">Programa de Extensión Automatización Industrial con PLC</h1>
+              <p class="text-lg md:text-xl mb-6">Formación especializada en automatización y control industrial</p>
+              <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                MÁS INFORMACIÓN
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="carousel-slide relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
+          <img src="https://images.unsplash.com/photo-1622634213746-9c2a4b9151c6?w=1920&h=600&fit=crop" alt="Electricidad Industrial" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white px-4">
+              <h1 class="text-3xl md:text-5xl font-bold mb-4">Electricidad Industrial y Tableros Eléctricos</h1>
+              <p class="text-lg md:text-xl mb-6">Instalaciones seguras y eficientes con estándares internacionales</p>
+              <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                MÁS INFORMACIÓN
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="carousel-slide relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=600&fit=crop" alt="Instrumentación" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white px-4">
+              <h1 class="text-3xl md:text-5xl font-bold mb-4">Instrumentación y Control de Procesos</h1>
+              <p class="text-lg md:text-xl mb-6">Sensado, medición y control de variables industriales</p>
+              <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                MÁS INFORMACIÓN
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+      
+      <!-- Flechas de navegación -->
+      <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition z-30">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition z-30">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      
+      <!-- Indicadores -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        <button class="w-3 h-3 bg-white rounded-full carousel-indicator" data-slide="0"></button>
+        <button class="w-3 h-3 bg-white/50 rounded-full carousel-indicator" data-slide="1"></button>
+        <button class="w-3 h-3 bg-white/50 rounded-full carousel-indicator" data-slide="2"></button>
+      </div>
+    </section>
+
+    <!-- ¿Por qué estudiar en Tecmova? -->
+    <section class="py-16 md:py-20 bg-gray-100">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div class="text-center md:text-left">
+            <div class="mb-6">
+              <svg class="w-16 h-16 mx-auto md:mx-0 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--azul-oscuro)] mb-6">¿Por qué estudiar en Tecmova?</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              En TECMOVA SOLUTIONS ofrecemos formación técnica de alto nivel con enfoque práctico. 
+              Nuestros programas están diseñados para brindarte las competencias que el mercado laboral 
+      demanda, con docentes especializados y equipos reales que te preparan para los desafíos 
+      de la industria moderna.
+            </p>
+          </div>
+          <div class="text-center md:text-left">
+            <div class="mb-6">
+              <svg class="w-16 h-16 mx-auto md:mx-0 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--azul-oscuro)] mb-6">Certificación Garantizada</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Al completar nuestros programas, recibirás certificados reconocidos por la industria, 
+              validando tus competencias y aumentando tus oportunidades profesionales. 
+              Nuestra formación está alineada con estándares internacionales y mejores prácticas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="py-16 md:py-20 bg-[var(--azul-oscuro)] text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=600&fit=crop" alt="Fondo industrial" class="w-full h-full object-cover">
+      </div>
+      <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Beneficios</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div class="text-center">
+            <div class="mb-4">
+              <svg class="w-16 h-16 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Membresía por 1 año gratis</h3>
+            <p class="text-gray-300 text-sm">Aula Virtual, charlas técnicas, lecciones y documentos</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="mb-4">
+              <svg class="w-16 h-16 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Soporte técnico por 6 meses</h3>
+            <p class="text-gray-300 text-sm">Asistencia personalizada para resolver dudas técnicas</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="mb-4">
+              <svg class="w-16 h-16 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Capacitaciones con docentes especializados</h3>
+            <p class="text-gray-300 text-sm">Profesionales con experiencia en la industria</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="mb-4">
+              <svg class="w-16 h-16 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Comunidad TECMOVA</h3>
+            <p class="text-gray-300 text-sm">Red de profesionales y oportunidades laborales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cursos Cortos -->
+    <section class="py-16 md:py-20 bg-gray-100">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center mb-4">
+            <svg class="w-12 h-12 text-[var(--azul-electrico)] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--azul-oscuro)]">EXPLORA NUESTROS CURSOS CORTOS</h2>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+              <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Electricidad Industrial</h3>
+              <div class="h-1 bg-red-500 w-full mb-4"></div>
+              <p class="text-gray-600 mb-4">Fundamentos de electricidad aplicada a la industria</p>
+              <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">Ver más</button>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+              <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Eplan P8 y Propanel</h3>
+              <div class="h-1 bg-teal-500 w-full mb-4"></div>
+              <p class="text-gray-600 mb-4">Diseño de planos eléctricos con software profesional</p>
+              <button class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded transition">Ver más</button>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+              <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Armados de Tableros Eléctricos</h3>
+              <div class="h-1 bg-[var(--azul-oscuro)] w-full mb-4"></div>
+              <p class="text-gray-600 mb-4">Construcción y montaje de tableros de distribución</p>
+              <button class="bg-[var(--azul-oscuro)] hover:bg-gray-800 text-white px-4 py-2 rounded transition">Ver más</button>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+              <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Variadores de Velocidad</h3>
+              <div class="h-1 bg-[var(--azul-electrico)] w-full mb-4"></div>
+              <p class="text-gray-600 mb-4">Control y configuración de drives industriales</p>
+              <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white px-4 py-2 rounded transition">Ver más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empresas -->
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--azul-oscuro)] mb-6">TAMBIÉN ASESORAMOS A EMPRESAS</h2>
+          <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+            SOY UNA EMPRESA Y DESEO CAPACITARME
+          </button>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div>
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a7a4e2e957?w=600&h=400&fit=crop" alt="Especialista industrial" class="rounded-lg shadow-lg">
+          </div>
+          <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-[var(--azul-oscuro)] mb-6">¡Sé un especialista!</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--azul-electrico) mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Programas personalizados según las necesidades de tu empresa</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--azul-electrico) mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Capacitación in-company o en nuestras instalaciones</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--azul-electrico) mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Consultoría técnica y proyectos de automatización</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--azul-electrico) mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Soporte post-capacitación y asesoría continua</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 text-center py-6 text-sm">
-    © 2025 TECMOVA SOLUTIONS – Todos los derechos reservados.
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto px-4 md:px-6">
+      <!-- Redes Sociales -->
+      <div class="text-center mb-8">
+        <h3 class="text-xl font-bold text-white mb-4">Síguenos</h3>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.41 3.58 8.16 8.54 9.48.63.11.86-.27.86-.6v-2.16c-3.49.75-4.23-1.68-4.23-1.68-.57-1.45-1.4-1.84-1.4-1.84-1.14-.78.09-.76.09-.76 1.26.09 1.93 1.3 1.93 1.3 1.12 1.92 2.94 1.36 3.66 1.04.11-.81.44-1.36.8-1.67-2.78-.32-5.7-1.39-5.7-6.19 0-1.37.49-2.49 1.29-3.36-.13-.32-.56-1.6.12-3.33 0 0 1.05-.34 3.44 1.29 1-.28 2.07-.42 3.14-.42 1.07 0 2.14.14 3.14.42 2.39-1.63 3.44-1.29 3.44-1.29.68 1.73.25 3.01.12 3.33.8.87 1.29 1.99 1.29 3.36 0 4.81-2.93 5.87-5.72 6.19.45.39.85 1.15.85 2.32v3.45c0 .33.23.71.87.59C17.38 20.16 20.96 16.41 20.96 12c0-5.5-4.46-9.96-9.96-9.96z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Enlaces -->
+      <div class="grid md:grid-cols-5 gap-8 text-sm">
+        <div>
+          <h4 class="text-white font-semibold mb-4">Nosotros</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Acerca de Tecmova</a></li>
+            <li><a href="#" class="hover:text-white transition">Misión</a></li>
+            <li><a href="#" class="hover:text-white transition">Visión</a></li>
+            <li><a href="#" class="hover:text-white transition">Trabaja con nosotros</a></li>
+            <li><a href="#" class="hover:text-white transition">Contáctanos</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Cursos Cortos</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Electricidad Industrial</a></li>
+            <li><a href="#" class="hover:text-white transition">Eplan P8 y Propanel</a></li>
+            <li><a href="#" class="hover:text-white transition">Armados de Tableros Eléctricos</a></li>
+            <li><a href="#" class="hover:text-white transition">Variadores de Velocidad</a></li>
+            <li><a href="#" class="hover:text-white transition">Instrumentación Industrial</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Curso de Especialización</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Electricidad Industrial</a></li>
+            <li><a href="#" class="hover:text-white transition">Variadores de Velocidad</a></li>
+            <li><a href="#" class="hover:text-white transition">Instrumentación Industrial</a></li>
+            <li><a href="#" class="hover:text-white transition">Programación PLC Siemens</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Programas de Extensión</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Electricidad y Tableros</a></li>
+            <li><a href="#" class="hover:text-white transition">Variadores y Presión</a></li>
+            <li><a href="#" class="hover:text-white transition">Instrumentación y Control</a></li>
+            <li><a href="#" class="hover:text-white transition">Automatización PLC Siemens</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Alumnos</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Aula Virtual</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 TECMOVA SOLUTIONS – Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
 
   <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20más%20información%20sobre%20sus%20servicios."
+  <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20más%20información%20sobre%20sus%20cursos"
      class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg w-14 h-14 flex items-center justify-center text-3xl z-50"
      target="_blank">
     💬
   </a>
 
+  <!-- Botón scroll arriba -->
+  <button id="scrollToTop" class="fixed bottom-6 right-24 bg-[var(--azul-electrico)] hover:bg-blue-600 text-white rounded-full shadow-lg w-12 h-12 flex items-center justify-center z-50 hidden">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
   <!-- Scripts -->
   <script>
+    // Menú móvil
     (function() {
       const menuBtn = document.getElementById('menu-btn');
       const overlay = document.getElementById('overlay');
@@ -272,22 +531,62 @@
       });
     })();
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+    // Carrusel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const track = document.getElementById('carouselTrack');
+    const indicators = document.querySelectorAll('.carousel-indicator');
 
-      const whatsappURL = `https://wa.me/51917689663?text=📝 Nuevo formulario:%0A👤 Nombre: ${encodeURIComponent(name)}%0A📧 Correo: ${encodeURIComponent(email)}%0A💬 Mensaje: ${encodeURIComponent(message)}`;
-      window.open(whatsappURL, "_blank");
+    function showSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('bg-white', i === currentSlide);
+        indicator.classList.toggle('bg-white/50', i !== currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    document.getElementById('nextBtn')?.addEventListener('click', nextSlide);
+    document.getElementById('prevBtn')?.addEventListener('click', prevSlide);
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-play carrusel
+    setInterval(nextSlide, 5000);
+
+    // Scroll arriba
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.remove('hidden');
+      } else {
+        scrollToTopBtn.classList.add('hidden');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   </script>
 
 </body>
 </html>
-
-
-
 
 
 
