@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instalaciones - Powerline Solutions</title>
+  <title>Servicios de Automatización - TECMOVA SOLUTIONS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
@@ -28,7 +28,10 @@
       transition: opacity 0.25s ease;
       z-index: 40;
     }
-    #overlay.active { opacity: 1; visibility: visible; }
+    #overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
     /* Sidebar móvil */
     #mobileMenu {
@@ -45,7 +48,9 @@
       -webkit-overflow-scrolling: touch;
       overflow-y: auto;
     }
-    #mobileMenu.active { transform: translateX(0); }
+    #mobileMenu.active {
+      transform: translateX(0);
+    }
     #mobileMenu a {
       display: block;
       padding: 14px 20px;
@@ -60,6 +65,7 @@
     }
 
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; }
+
     main { padding-top: 84px; }
 
     @media (min-width: 768px) {
@@ -70,35 +76,27 @@
 <body class="bg-white text-gray-900 font-sans antialiased">
 
   <!-- Header -->
-  <header class="bg-[var(--azul-oscuro)] text-white">
-    <div class="container mx-auto flex justify-between items-center py-1 px-4">
-      <div class="flex items-center gap-3">
-  <img 
-    src="imagenes/logo_empresa_index.png" 
-    alt="TECMOVA SOLUTIONS" 
-    class="h-12 md:h-14 w-auto"
-  >
-  <span class="text-2xl font-bold">TECMOVA SOLUTIONS</span>
-</div>
-
-      <!-- Menú desktop -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-6 font-medium">
-          <li><a href="index.html" class="hover:text-[var(--azul-electrico)]">Inicio</a></li>
-          <li><a href="instalaciones.html" class="text-[var(--azul-electrico)] font-semibold">Instalaciones</a></li>
-          <li><a href="planos.html" class="hover:text-[var(--azul-electrico)]">Planos</a></li>
-          <li><a href="tableros.html" class="hover:text-[var(--azul-electrico)]">Tableros</a></li>
-          <li><a href="#contacto" class="hover:text-[var(--azul-electrico)]">Contacto</a></li>
-        </ul>
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="imagenes/logo_empresa_index.png" alt="TECMOVA SOLUTIONS Logo" class="h-10 mr-3">
+        <span class="text-2xl font-bold text-[var(--azul-oscuro)]">TECMOVA SOLUTIONS</span>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Inicio</a>
+        <a href="#" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Nosotros</a>
+        <a href="capacitaciones.html" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Cursos</a>
+        <a href="automatizacion.html" class="text-[var(--azul-electrico)] font-semibold">Servicios</a>
+        <a href="#" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Aula Virtual</a>
+        <a href="index.html#contacto" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Contacto</a>
       </nav>
-
-      <!-- Botón hamburguesa -->
-      <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="md:hidden text-white">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="md:hidden">
+        <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="text-[var(--azul-oscuro)]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -113,146 +111,288 @@
     </div>
     <nav class="mt-2">
       <a href="index.html">Inicio</a>
-      <a href="instalaciones.html" class="font-semibold text-[var(--azul-electrico)]">Instalaciones</a>
-      <a href="planos.html">Planos</a>
-      <a href="tableros.html">Tableros</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#">Nosotros</a>
+      <a href="capacitaciones.html">Cursos</a>
+      <a href="automatizacion.html" class="font-semibold text-[var(--azul-electrico)]">Servicios</a>
+      <a href="#">Aula Virtual</a>
+      <a href="index.html#contacto">Contacto</a>
     </nav>
   </aside>
 
-  <!-- Hero -->
-  <section class="bg-[var(--azul-electrico)] text-white text-center py-20 px-4">
-    <h2 class="text-3xl md:text-5xl font-bold mb-4">Instalaciones Eléctricas Profesionales</h2>
-    <p class="text-base md:text-lg mb-6">Montaje seguro y certificado para proyectos residenciales, comerciales e industriales.</p>
-    <div class="flex flex-col md:flex-row gap-4 justify-center">
-      <a href="#contacto" class="bg-white text-[var(--azul-electrico)] font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition">
-        Solicitar Información
-      </a>
-      <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios." 
-         target="_blank" 
-         class="bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition flex items-center justify-center">
-        💬 WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- Nuestros Servicios -->
-  <main class="py-16 md:py-20 container mx-auto px-4 md:px-6">
-    <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">Nuestros Servicios</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- Instalaciones Básicas -->
-      <div class="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]">
-        <h4 class="text-lg md:text-xl font-semibold mb-3">Instalaciones Básicas</h4>
-        <ul class="text-gray-600 text-sm md:text-base list-disc list-inside space-y-1">
-          <li>Puntos de luz (focos, lámparas, LED)</li>
-          <li>Puntos de tomacorrientes</li>
-          <li>Interruptores simples, dobles y triples</li>
-          <li>Circuitos de iluminación y fuerza</li>
-        </ul>
-      </div>
-
-      <!-- Instalaciones Especiales -->
-      <div class="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]">
-        <h4 class="text-lg md:text-xl font-semibold mb-3">Instalaciones Especiales</h4>
-        <ul class="text-gray-600 text-sm md:text-base list-disc list-inside space-y-1">
-          <li>Tomas para cocina, horno, terma y aire acondicionado</li>
-          <li>Porteros eléctricos y videoporteros</li>
-          <li>Timbres y alarmas simples</li>
-        </ul>
-      </div>
-
-      <!-- Cableado y Canalización -->
-      <div class="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]">
-        <h4 class="text-lg md:text-xl font-semibold mb-3">Cableado y Canalización</h4>
-        <ul class="text-gray-600 text-sm md:text-base list-disc list-inside space-y-1">
-          <li>Cableado empotrado y superficial</li>
-          <li>Instalación de canaletas y tuberías</li>
-          <li>Renovación de cableado deteriorado</li>
-        </ul>
-      </div>
-
-      <!-- Tableros Domiciliarios -->
-      <div class="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]">
-        <h4 class="text-lg md:text-xl font-semibold mb-3">Tableros Domiciliarios</h4>
-        <ul class="text-gray-600 text-sm md:text-base list-disc list-inside space-y-1">
-          <li>Instalación de tableros eléctricos básicos</li>
-          <li>Protecciones térmicas y diferenciales</li>
-          <li>Expansión de circuitos</li>
-        </ul>
-      </div>
-
-      <!-- Seguridad Eléctrica -->
-      <div class="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]">
-        <h4 class="text-lg md:text-xl font-semibold mb-3">Seguridad Eléctrica</h4>
-        <ul class="text-gray-600 text-sm md:text-base list-disc list-inside space-y-1">
-          <li>Instalación de puesta a tierra</li>
-          <li>Pararrayos</li>
-          <li>Corrección de fugas y sobrecargas</li>
-        </ul>
-      </div>
-
-      <!-- Edificios y Comercios -->
-      <div class="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[var(--azul-electrico)]">
-        <h4 class="text-lg md:text-xl font-semibold mb-3">Edificios y Comercios</h4>
-        <ul class="text-gray-600 text-sm md:text-base list-disc list-inside space-y-1">
-          <li>Instalaciones trifásicas</li>
-          <li>Sistemas de emergencia e iluminación autónoma</li>
-          <li>Cableado estructurado (redes y datos)</li>
-        </ul>
-      </div>
-      
-       <!-- Domotización e Integración Inteligente -->
-      <div class="bg-white shadow-xl rounded-2xl p-8 border-t-4 border-[var(--azul-electrico)] md:col-span-3">
-        <h4 class="text-xl md:text-2xl font-bold mb-4 text-[var(--azul-oscuro)]">Domotización e Integración Inteligente</h4>
-        <p class="text-gray-700 mb-4 text-base md:text-lg">
-          Convierte tu hogar o negocio en un espacio inteligente con sistemas de control automatizado e integración con asistentes de voz como <strong>Alexa</strong> o <strong>Google Home</strong>. 
-          Controla la iluminación, tomacorrientes, equipos eléctricos y sistemas de seguridad desde tu celular o por comandos de voz.
+  <main>
+    <!-- Hero -->
+    <section class="bg-[var(--azul-electrico)] text-white py-16 px-4">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Servicios de Automatización</h1>
+        <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+          Programación PLC y HMI, configuración de variadores de velocidad, recolección y reporte de datos automático, 
+          reparación y mantenimiento de tableros de bombas de agua, fabricación de módulos de entrenamiento PLC.
         </p>
-        <ul class="text-gray-600 text-sm md:text-base list-disc list-inside space-y-2">
-          <li>Automatización de luces, persianas y climatización</li>
-          <li>Control de electrodomésticos y dispositivos inteligentes</li>
-          <li>Integración con Alexa, Google Home y otros sistemas</li>
-          <li>Configuración de escenarios personalizados (ej. “modo cine”)</li>
-          <li>Seguridad y monitoreo remoto desde tu smartphone</li>
-        </ul>
       </div>
+    </section>
 
-    </div>
+    <!-- Servicios Principales -->
+    <section class="py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">
+          Servicios de Automatización
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <!-- Automatización de Procesos Industriales -->
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-4">Automatización de Procesos Industriales</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Diseñamos e implementamos sistemas de control completos para líneas de producción industrial. 
+              Nuestros soluciones incluyen desde la instrumentación hasta el sistema de control principal, 
+              garantizando eficiencia y fiabilidad en tus procesos productivos.
+            </p>
+            <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+              ¡VER MÁS INFORMACIÓN!
+            </button>
+          </div>
+          <div class="order-1 md:order-2">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a7a4e2e957?w=600&h=400&fit=crop" 
+                 alt="Automatización de Procesos Industriales" 
+                 class="rounded-lg shadow-lg w-full">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Segunda Sección -->
+    <section class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <!-- Automatización de Máquinas -->
+          <div>
+            <img src="https://images.unsplash.com/photo-1622634213746-9c2a4b9151c6?w=600&h=400&fit=crop" 
+                 alt="Automatización de Máquinas" 
+                 class="rounded-lg shadow-lg w-full">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-4">Automatización de Máquinas</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Modernizamos tu maquinaria existente con sistemas de control automatizados. 
+              Desde simples automatizaciones hasta sistemas complejos de control, 
+              mejoramos la productividad y reducimos errores operativos.
+            </p>
+            <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+              ¡VER MÁS INFORMACIÓN!
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Servicios Específicos -->
+    <section class="py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">
+          Nuestros Servicios Especializados
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Programación PLC y HMI -->
+          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="mb-4">
+              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Programación PLC y HMI</h3>
+            <p class="text-gray-600 mb-4">
+              Desarrollo de programas para control lógico y interfaces humano-máquina intuitivas.
+            </p>
+            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
+              Saber más →
+            </button>
+          </div>
+
+          <!-- Configuración de Variadores -->
+          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="mb-4">
+              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Configuración de Variadores (VFD)</h3>
+            <p class="text-gray-600 mb-4">
+              Ajuste y optimización de variadores de frecuencia para control eficiente de motores.
+            </p>
+            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
+              Saber más →
+            </button>
+          </div>
+
+          <!-- Módulos de Entrenamiento -->
+          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="mb-4">
+              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Módulos de Entrenamiento PLC</h3>
+            <p class="text-gray-600 mb-4">
+              Fabricación de módulos educativos para universidades e instituciones técnicas.
+            </p>
+            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
+              Saber más →
+            </button>
+          </div>
+
+          <!-- Tableros Eléctricos de Control -->
+          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="mb-4">
+              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Tableros Eléctricos de Control</h3>
+            <p class="text-gray-600 mb-4">
+              Diseño y construcción de tableros de control industrial con estándares de seguridad.
+            </p>
+            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
+              Saber más →
+            </button>
+          </div>
+
+          <!-- Automatización de Juegos Mecánicos -->
+          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="mb-4">
+              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Automatización de Juegos Mecánicos</h3>
+            <p class="text-gray-600 mb-4">
+              Sistemas de control seguros y confiables para parques de entretenimiento.
+            </p>
+            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
+              Saber más →
+            </button>
+          </div>
+
+          <!-- Sistemas de Pesaje -->
+          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="mb-4">
+              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Sistemas de Pesaje Automático</h3>
+            <p class="text-gray-600 mb-4">
+              Integración de sistemas de pesaje precisos para procesos industriales.
+            </p>
+            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
+              Saber más →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto CTA -->
+    <section class="py-16 md:py-20 bg-[var(--azul-oscuro)] text-white">
+      <div class="container mx-auto px-4 md:px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Necesitas automatizar tus procesos?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Contáctanos para una evaluación gratuita y descubre cómo podemos mejorar tu productividad.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a href="index.html#contacto" class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+            Solicitar Cotización
+          </a>
+          <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20información%20sobre%20automatización"
+             target="_blank"
+             class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Secciones -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Secciones</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-white transition">Inicio</a></li>
+            <li><a href="#" class="hover:text-white transition">Nosotros</a></li>
+            <li><a href="capacitaciones.html" class="hover:text-white transition">Cursos</a></li>
+            <li><a href="automatizacion.html" class="hover:text-white transition">Servicios</a></li>
+            <li><a href="index.html#contacto" class="hover:text-white transition">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <!-- Servicio al Cliente -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Servicio al Cliente</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Soporte Técnico</a></li>
+            <li><a href="#" class="hover:text-white transition">Garantía</a></li>
+            <li><a href="#" class="hover:text-white transition">Manuales</a></li>
+            <li><a href="#" class="hover:text-white transition">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contacto -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contacto</h4>
+          <ul class="space-y-2 text-sm">
+            <li>📧 info@tecmova.com</li>
+            <li>📱 +51 917 689 663</li>
+            <li>📍 Lima, Perú</li>
+            <li><a href="index.html#contacto" class="hover:text-white transition">Formulario de Contacto</a></li>
+          </ul>
+        </div>
+        
+        <!-- Redes Sociales -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Síguenos</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-3.35-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 TECMOVA SOLUTIONS – Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
   <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios." 
-     class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg w-14 h-14 flex items-center justify-center text-3xl z-50" 
+  <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20más%20información%20sobre%20automatización"
+     class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg w-14 h-14 flex items-center justify-center text-3xl z-50"
      target="_blank">
     💬
   </a>
 
-  <!-- Contacto -->
-  <section id="contacto" class="bg-[var(--azul-oscuro)] text-white py-16 md:py-20 px-4">
-    <div class="container mx-auto text-center">
-      <h3 class="text-2xl md:text-3xl font-bold mb-6">Contáctanos</h3>
-      <p class="mb-6 text-gray-300 text-sm md:text-base">Solicita una cotización o asesoría personalizada.</p>
-      <form id="whatsappForm" class="max-w-xl mx-auto space-y-4">
-        <input type="text" id="nombre" placeholder="Nombre" class="w-full p-3 rounded-lg text-black" required>
-        <input type="email" id="correo" placeholder="Correo" class="w-full p-3 rounded-lg text-black" required>
-        <textarea id="mensaje" placeholder="Mensaje" rows="4" class="w-full p-3 rounded-lg text-black" required></textarea>
-        <button type="submit" class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition w-full md:w-auto">Enviar por WhatsApp</button>
-      </form>
-      <div class="mt-6">
-        <a href="https://wa.me/51917689663?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios." 
-           target="_blank" 
-           class="inline-block bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition">
-          📲 Escríbenos por WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 text-center py-6 text-sm">
-    © 2025 Powerline Solutions – Todos los derechos reservados.
-  </footer>
+  <!-- Botón scroll arriba -->
+  <button id="scrollToTop" class="fixed bottom-6 right-24 bg-[var(--azul-electrico)] hover:bg-blue-600 text-white rounded-full shadow-lg w-12 h-12 flex items-center justify-center z-50 hidden">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
 
   <!-- Scripts -->
   <script>
@@ -289,26 +429,27 @@
       });
     })();
 
-    // Formulario a WhatsApp
-    document.getElementById("whatsappForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      let nombre = document.getElementById("nombre").value;
-      let correo = document.getElementById("correo").value;
-      let mensaje = document.getElementById("mensaje").value;
+    // Scroll arriba
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.remove('hidden');
+      } else {
+        scrollToTopBtn.classList.add('hidden');
+      }
+    });
 
-      let url = "https://wa.me/51917689663?text=" 
-        + "📝 Nuevo formulario:%0A"
-        + "👤 Nombre: " + nombre + "%0A"
-        + "📧 Correo: " + correo + "%0A"
-        + "💬 Mensaje: " + mensaje;
-
-      window.open(url, '_blank');
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   </script>
 
 </body>
 </html>
-
 
 
 
