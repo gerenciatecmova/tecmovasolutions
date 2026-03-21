@@ -4,13 +4,13 @@
     "curso": "Automatización PLC",
     "fechaCurso": "Enero-Marzo 2025",
     "duracion": "120 horas",
-    "imagen": "imagenes/12345678_certificado.jpg"
+    "imagen": "./certificados/12345678_certificado.jpg"
   },
   "87654321": {
     "nombre": "María Gómez López",
     "curso": "Electricidad Industrial",
     "fechaCurso": "Feb-Marzo 2025",
     "duracion": "80 horas",
-    "imagen": "imagenes/87654321_certificado.jpg"
+    "imagen": "./certificados/87654321_certificado.jpg"
   }
 }
