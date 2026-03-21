@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Certificado - TECMOVA SOLUTIONS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --azul-electrico: #1E5EFF;
+            --azul-oscuro: #0A2342;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .certificate-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .certificate-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .certificate-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .certificate-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--azul-oscuro);
+            margin-bottom: 0.5rem;
+        }
+        
+        .certificate-subtitle {
+            color: #6B7280;
+            font-size: 1.1rem;
+        }
+        
+        .student-info {
+            background: #f8fafc;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--azul-oscuro);
+        }
+        
+        .info-value {
+            color: #4B5563;
+        }
+        
+        .certificate-image-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+        }
+        
+        .certificate-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+        
+        .certificate-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .btn-tecmova {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--azul-electrico) 0%, #0056CC 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-tecmova:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 94, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            background: transparent;
+            color: var(--azul-oscuro);
+            border: 2px solid var(--azul-oscuro);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--azul-oscuro);
+            color: white;
+        }
+        
+        .not-found {
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .not-found-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            background: var(--azul-oscuro);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .certificate-container {
+                margin: 1rem auto;
+            }
+            
+            .certificate-card {
+                padding: 1.5rem;
+            }
+            
+            .certificate-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-[var(--azul-oscuro)] text-white">
+      <div class="container mx-auto flex justify-between items-center py-4 px-4">
+        <h1 class="flex items-center gap-2 text-xl md:text-2xl font-bold">
+          <img src="imagenes/logo_empresa_index.png" alt="TECMOVA" class="h-10 md:h-12">
+          TECMOVA SOLUTIONS
+        </h1>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="certificate-container">
+        <div id="certificateContent">
+            <!-- El contenido se cargará dinámicamente -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 TECMOVA SOLUTIONS – Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // ============================================
+        // CONFIGURACIÓN
+        // ============================================
+        const CERTIFICADOS_JSON_URL = 'certificados.json';
+        
+        let certificadosDB = {
+            // Datos de respaldo (se usan si el JSON no carga)
+            "12345678": {
+                "nombre": "Juan Pérez García",
+                "curso": "Automatización PLC",
+                "fechaCurso": "Enero-Marzo 2025",
+                "duracion": "120 horas",
+                "imagen": "certificados/12345678_certificado.jpg",
+                "nota": "Aprobado"
+            },
+            "87654321": {
+                "nombre": "María Gómez López",
+                "curso": "Electricidad Industrial",
+                "fechaCurso": "Feb-Marzo 2025",
+                "duracion": "80 horas",
+                "imagen": "certificados/87654321_certificado.jpg",
+                "nota": "Aprobado"
+            }
+        };
+        
+        // Cargar base de datos desde JSON (intenta actualizar si puede)
+        async function cargarBaseDeDatos() {
+            try {
+                const response = await fetch(CERTIFICADOS_JSON_URL);
+                if (!response.ok) throw new Error('No se pudo cargar');
+                const data = await response.json();
+                // Si carga correctamente, actualiza la base de datos
+                certificadosDB = { ...certificadosDB, ...data };
+                console.log('Base de datos actualizada desde JSON');
+            } catch (error) {
+                console.log('Usando datos locales (modo offline)');
+                // Los datos de respaldo ya están en certificadosDB
+            }
+        }
+        
+        // Obtener parámetros de la URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // Buscar certificado
+        function buscarCertificado(dni) {
+            return certificadosDB[dni] || null;
+        }
+        
+        // Cargar certificado
+        async function cargarCertificado() {
+            // Primero cargar la base de datos
+            await cargarBaseDeDatos();
+            
+            const dni = getQueryParam('dni');
+            const content = document.getElementById('certificateContent');
+            
+            // Mostrar loader
+            content.innerHTML = `
+                <div class="certificate-card" style="text-align: center; padding: 3rem;">
+                    <p style="color: #6B7280; font-size: 1.2rem;">🔍 Buscando certificado...</p>
+                </div>
+            `;
+            
+            if (!dni) {
+                mostrarNoEncontrado(content, 'No se proporcionó DNI');
+                return;
+            }
+            
+            // Buscar certificado
+            const certificado = buscarCertificado(dni);
+            
+            if (certificado) {
+                mostrarCertificado(content, certificado, dni);
+            } else {
+                mostrarNoEncontrado(content, dni);
+            }
+        }
+        
+        // Mostrar certificado encontrado
+        function mostrarCertificado(content, certificado, dni) {
+            content.innerHTML = `
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <h1 class="certificate-title">🎓 Certificado de Competencia</h1>
+                        <p class="certificate-subtitle">TECMOVA SOLUTIONS</p>
+                        <p style="color: #9CA3AF; font-size: 0.9rem; margin-top: 0.5rem;">Código: TEC-2025-${dni.slice(-3)}</p>
+                    </div>
+                    
+                    <div class="student-info">
+                        <div class="info-row">
+                            <span class="info-label">👤 Alumno:</span>
+                            <span class="info-value">${certificado.nombre}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">🆔 DNI:</span>
+                            <span class="info-value">${dni}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">📚 Curso:</span>
+                            <span class="info-value">${certificado.curso}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">📅 Período del Curso:</span>
+                            <span class="info-value">${certificado.fechaCurso || 'No especificado'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">⏱️ Duración:</span>
+                            <span class="info-value">${certificado.duracion || 'No especificada'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">📆 Fecha de Emisión:</span>
+                            <span class="info-value">${certificado.fechaEmision || new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">📝 Calificación:</span>
+                            <span class="info-value" style="color: var(--azul-electrico); font-weight: bold;">${certificado.nota || 'Aprobado'}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-image-container">
+                        <p style="color: #6B7280; margin-bottom: 1rem; font-size: 0.9rem;">Vista previa del certificado:</p>
+                        <img src="${certificado.imagen}" 
+                             alt="Certificado de ${certificado.nombre}" 
+                             class="certificate-image"
+                             onerror="this.src='certificados/placeholder.jpg'; this.alt='Imagen no disponible'">
+                    </div>
+                    
+                    <button class="btn-tecmova" onclick="descargarCertificado('TEC-2025-${dni.slice(-3)}', '${certificado.nombre}', '${certificado.imagen}')">
+                        📥 DESCARGAR CERTIFICADO
+                    </button>
+                    
+                    <a href="certificados.html" class="btn-secondary">
+                        ← Volver a Certificados
+                    </a>
+                </div>
+            `;
+        }
+        
+        // Mostrar mensaje de no encontrado
+        function mostrarNoEncontrado(content, dni) {
+            content.innerHTML = `
+                <div class="certificate-card not-found">
+                    <div class="not-found-icon">❌</div>
+                    <h2 class="certificate-title">Certificado No Encontrado</h2>
+                    <p style="color: #6B7280; margin-bottom: 1.5rem;">
+                        ${dni === 'No se proporcionó DNI' 
+                            ? 'No se proporcionó un DNI válido.' 
+                            : `El DNI <strong>${dni}</strong> no tiene certificados registrados.`}
+                    </p>
+                    <p style="color: #9CA3AF; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Verifica que el DNI esté correcto o contacta a soporte técnico.
+                    </p>
+                    <a href="certificados.html" class="btn-tecmova" style="max-width: 300px; margin: 0 auto;">
+                        🔍 Buscar Certificado
+                    </a>
+                </div>
+            `;
+        }
+        
+        // Función para descargar certificado
+        function descargarCertificado(codigo, nombre, imagenSrc) {
+            const link = document.createElement('a');
+            link.href = imagenSrc;
+            link.download = `certificado_${nombre.replace(/\s+/g, '_').toLowerCase()}.jpg`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            setTimeout(() => {
+                alert(`¡Certificado descargado exitosamente!\n\n🎓 Alumno: ${nombre}\n📋 Código: ${codigo}`);
+            }, 500);
+        }
+        
+        // Cargar al iniciar
+        document.addEventListener('DOMContentLoaded', cargarCertificado);
+    </script>
+</body>
+</html>

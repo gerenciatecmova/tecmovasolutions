@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificados de Alumnos - TECMOVA SOLUTIONS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --azul-electrico: #1E5EFF;
+            --azul-oscuro: #0A2342;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .header-nav {
+            background: var(--azul-oscuro);
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a.active {
+            color: var(--azul-electrico);
+            font-weight: 600;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+        }
+        
+        .search-section {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+        }
+        
+        .search-button {
+            background: var(--azul-electrico);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .certificate-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .student-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--azul-oscuro);
+        }
+        
+        .course-name {
+            font-size: 1.1rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 1rem;
+        }
+        
+        .btn-tecmova {
+            display: block;
+            width: 100%;
+            background: var(--azul-electrico);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .footer {
+            background: var(--azul-oscuro);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-[var(--azul-oscuro)] text-white">
+      <div class="container mx-auto flex justify-between items-center py-1 px-4">
+
+        <!-- LOGO + NOMBRE -->
+        <h1 class="flex items-center gap-2 text-2xl font-bold">
+          <img 
+            src="imagenes/logo_empresa_index.png"
+            alt="TECMOVA SOLUTIONS"
+            class="h-12 md:h-14 w-auto"
+          >
+          TECMOVA SOLUTIONS
+        </h1>
+
+        <!-- Menú desktop -->
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6 font-medium">
+            <li><a href="index.html" class="hover:text-[var(--azul-electrico)]">Inicio</a></li>
+            <li><a href="capacitaciones.html" class="hover:text-[var(--azul-electrico)]">Capacitaciones</a></li>
+            <li><a href="certificados.html" class="text-[var(--azul-electrico)] font-semibold">Certificados</a></li>
+            <li><a href="aula-virtual.html" class="hover:text-[var(--azul-electrico)]">Aula Virtual</a></li>
+            <li><a href="#contactanos" class="hover:text-[var(--azul-electrico)]">Contáctanos</a></li>
+            <li><a href="#soy-empresa" class="hover:text-[var(--azul-electrico)]">Soy Empresa</a></li>
+          </ul>
+        </nav>
+
+        <!-- Botón hamburguesa -->
+        <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="md:hidden text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Overlay + Sidebar -->
+    <div id="overlay"></div>
+    <aside id="mobileMenu">
+      <div class="px-4">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-xl font-bold text-white">Menú</h2>
+          <button id="close-btn" class="text-white text-2xl">✕</button>
+        </div>
+      </div>
+      <nav class="mt-2">
+        <a href="index.html">Inicio</a>
+        <a href="capacitaciones.html">Capacitaciones</a>
+        <a href="certificados.html" class="font-semibold text-[var(--azul-electrico)]">Certificados</a>
+        <a href="aula-virtual.html">Aula Virtual</a>
+        <a href="#contactanos">Contáctanos</a>
+        <a href="#soy-empresa">Soy Empresa</a>
+      </nav>
+    </aside>
+
+    <main class="main-container">
+        <h1 class="page-title">🎓 Certificados de Alumnos</h1>
+        
+        <section class="search-section">
+            <h2>Buscar tu Certificado</h2>
+            <form onsubmit="buscarCertificado(event)">
+                <input type="text" class="search-input" placeholder="Ingresa tu DNI o nombre completo" id="searchInput">
+                <button type="submit" class="search-button">🔍 Buscar</button>
+            </form>
+        </section>
+        
+        <section class="certificates-grid" id="certificatesGrid">
+            <!-- El certificado se mostrará aquí dinámicamente -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&​copy; 2025 TECMOVA SOLUTIONS – Todos los derechos reservados.</p>
+    </footer>
+
+ 
+    <script>
+        // Base de datos de certificados con imágenes
+        const certificadosDB = {
+            '12345678': {
+                nombre: 'Juan Pérez García',
+                curso: 'Automatización Industrial con PLC Siemens',
+                fecha: '15 de Marzo de 2025',
+                imagen: 'imagenes/certificado_juan_perez.jpg',
+                codigo: 'TEC-2025-001'
+            },
+            '87654321': {
+                nombre: 'María Gómez López',
+                curso: 'Electricidad Industrial',
+                fecha: '10 de Marzo de 2025',
+                imagen: 'imagenes/certificado_maria_gomez.jpg',
+                codigo: 'TEC-2025-002'
+            },
+            '45678912': {
+                nombre: 'Carlos Rodríguez Martínez',
+                curso: 'Diseño y Armado de Tableros Eléctricos',
+                fecha: '5 de Marzo de 2025',
+                imagen: 'imagenes/certificado_carlos_rodriguez.jpg',
+                codigo: 'TEC-2025-003'
+            }
+        };
+        
+        function buscarCertificado(event) {
+            event.preventDefault();
+            const dni = document.getElementById('searchInput').value.trim();
+            
+            if (dni === '') {
+                alert('Por favor, ingresa un DNI o código de certificado.');
+                return;
+            }
+            
+            // Redirigir a la página de ver certificado
+            window.location.href = `ver-certificado.html?dni=${encodeURIComponent(dni)}`;
+        }
+        
+        // Permitir búsqueda al presionar Enter
+        document.getElementById('searchInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                buscarCertificado(event);
+            }
+        });
+    </script>
+</body>
+</html>
