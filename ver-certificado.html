@@ -196,7 +196,7 @@
         // ============================================
         // CONFIGURACIÓN
         // ============================================
-        const CERTIFICADOS_JSON_URL = 'certificados.json';
+        const CERTIFICADOS_JSON_URL = './certificados.json';
         
         let certificadosDB = {
             // Datos de respaldo (se usan si el JSON no carga)
@@ -205,7 +205,7 @@
                 "curso": "Automatización PLC",
                 "fechaCurso": "Enero-Marzo 2025",
                 "duracion": "120 horas",
-                "imagen": "certificados/12345678_certificado.jpg",
+                "imagen": "./certificados/12345678_certificado.jpg",
                 "nota": "Aprobado"
             },
             "87654321": {
@@ -213,7 +213,7 @@
                 "curso": "Electricidad Industrial",
                 "fechaCurso": "Feb-Marzo 2025",
                 "duracion": "80 horas",
-                "imagen": "certificados/87654321_certificado.jpg",
+                "imagen": "./certificados/87654321_certificado.jpg",
                 "nota": "Aprobado"
             }
         };
@@ -320,7 +320,7 @@
                         <img src="${certificado.imagen}" 
                              alt="Certificado de ${certificado.nombre}" 
                              class="certificate-image"
-                             onerror="this.src='certificados/placeholder.jpg'; this.alt='Imagen no disponible'">
+                             onerror="this.src='./certificados/placeholder.jpg'; this.alt='Imagen no disponible'">
                     </div>
                     
                     <button class="btn-tecmova" onclick="descargarCertificado('TEC-2025-${dni.slice(-3)}', '${certificado.nombre}', '${certificado.imagen}')">
