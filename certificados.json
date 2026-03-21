@@ -12,5 +12,32 @@
     "fechaCurso": "Feb-Marzo 2025",
     "duracion": "80 horas",
     "imagen": "./certificados/87654321_certificado.jpg"
+  },
+  "75591905": {
+    "nombre": "Kenin Risalbe Melgar",
+    "curso": "Automatización con PLC Siemens",
+    "fechaCurso": "21/02/2026",
+    "duracion": "1 mes",
+    "fechaEmision": "21/03/2026",
+    "imagen": "./certificados/75591905_certificado.jpg",
+    "nota": "17"
+  },
+  "48592613": {
+    "nombre": "Jose Huanca Alvino",
+    "curso": "Automatización con PLC Siemens",
+    "fechaCurso": "22/02/2026",
+    "duracion": "1 mes",
+    "fechaEmision": "22/03/2026",
+    "imagen": "./certificados/48592613_certificado.jpg",
+    "nota": "17"
+  },
+  "48002574": {
+    "nombre": "Henry pariansullca Otcane",
+    "curso": "Automatización con PLC Siemens",
+    "fechaCurso": "23/02/2026",
+    "duracion": "1 mes",
+    "fechaEmision": "23/03/2026",
+    "imagen": "./certificados/48002574_certificado.jpg",
+    "nota": "17"
   }
 }
