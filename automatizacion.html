@@ -13,6 +13,54 @@
       --blanco: #FFFFFF;
     }
 
+    /* Botones TECMOVA */
+    .btn-tecmova {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--azul-electrico) 0%, #0056CC 100%);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+      font-size: 1.125rem;
+      text-align: center;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+    }
+
+    .btn-tecmova:hover {
+      background: linear-gradient(135deg, #0056CC 0%, #003D99 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-tecmova:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .btn-tecmova::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-tecmova:hover::before {
+      left: 100%;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -76,22 +124,34 @@
 <body class="bg-white text-gray-900 font-sans antialiased">
 
   <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="flex items-center">
-        <img src="imagenes/logo_empresa_index.png" alt="TECMOVA SOLUTIONS Logo" class="h-10 mr-3">
-        <span class="text-2xl font-bold text-[var(--azul-oscuro)]">TECMOVA SOLUTIONS</span>
-      </div>
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Inicio</a>
-        <a href="#" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Nosotros</a>
-        <a href="capacitaciones.html" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Cursos</a>
-        <a href="automatizacion.html" class="text-[var(--azul-electrico)] font-semibold">Servicios</a>
-        <a href="#" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Aula Virtual</a>
-        <a href="index.html#contacto" class="text-[var(--azul-oscuro)] hover:text-[var(--azul-electrico)] font-medium">Contacto</a>
+  <header class="bg-[var(--azul-oscuro)] text-white">
+   <div class="container mx-auto flex justify-between items-center py-1 px-4">
+
+
+      <!-- LOGO + NOMBRE -->
+      <h1 class="flex items-center gap-2 text-2xl font-bold">
+        <img 
+          src="imagenes/logo_empresa_index.png"
+          alt="TECMOVA SOLUTIONS"
+          class="h-12 md:h-14 w-auto"
+        >
+        TECMOVA SOLUTIONS
+      </h1>
+
+      <!-- Menú desktop -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6 font-medium">
+          <li><a href="index.html" class="text-[var(--azul-electrico)] font-semibold">Inicio</a></li>
+          <li><a href="capacitaciones.html" class="hover:text-[var(--azul-electrico)]">Capacitaciones</a></li>
+          <li><a href="automatizacion.html" class="text-[var(--azul-electrico)] font-semibold">Servicios de Automatización</a></li>
+          <li><a href="electricos.html" class="hover:text-[var(--azul-electrico)]">Servicios Eléctricos</a></li>
+          <li><a href="#contacto" class="hover:text-[var(--azul-electrico)]">Contacto</a></li>
+        </ul>
       </nav>
+      
+      <!-- Menú móvil -->
       <div class="md:hidden">
-        <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="text-[var(--azul-oscuro)]">
+        <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -131,53 +191,53 @@
       </div>
     </section>
 
-    <!-- Servicios Principales -->
-    <section class="py-16 md:py-20 bg-gray-50">
+    <!-- Sección Principal - Automatización de Procesos Industriales -->
+    <section class="py-16 md:py-20 bg-white">
       <div class="container mx-auto px-4 md:px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">
-          Servicios de Automatización
-        </h2>
-        
         <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <!-- Automatización de Procesos Industriales -->
+          <!-- Texto izquierda -->
           <div class="order-2 md:order-1">
-            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-4">Automatización de Procesos Industriales</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Diseñamos e implementamos sistemas de control completos para líneas de producción industrial. 
-              Nuestros soluciones incluyen desde la instrumentación hasta el sistema de control principal, 
-              garantizando eficiencia y fiabilidad en tus procesos productivos.
+            <h2 class="text-3xl font-bold text-[var(--azul-oscuro)] mb-6">Automatización de Procesos Industriales</h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos servicios completos de automatización industrial, incluyendo programación de PLCs, 
+              desarrollo de interfaces HMI, configuración de variadores de velocidad y sistemas de 
+              recolección automática de datos. Especialistas en modernizar tus procesos productivos.
             </p>
-            <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+            <button class="btn-tecmova">
               ¡VER MÁS INFORMACIÓN!
             </button>
           </div>
+          <!-- Imagen derecha -->
           <div class="order-1 md:order-2">
             <img src="https://images.unsplash.com/photo-1581091226825-a6a7a4e2e957?w=600&h=400&fit=crop" 
-                 alt="Automatización de Procesos Industriales" 
-                 class="rounded-lg shadow-lg w-full">
+                 alt="Automatización Industrial" 
+                 class="rounded-lg shadow-xl w-full">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Segunda Sección -->
-    <section class="py-16 md:py-20 bg-white">
+    <!-- Sección Secundaria - Programación de Equipos -->
+    <section class="py-16 md:py-20 bg-gray-50">
       <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">Programación de Equipos</h2>
+        
         <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <!-- Automatización de Máquinas -->
+          <!-- Imagen izquierda -->
           <div>
-            <img src="https://images.unsplash.com/photo-1622634213746-9c2a4b9151c6?w=600&h=400&fit=crop" 
-                 alt="Automatización de Máquinas" 
-                 class="rounded-lg shadow-lg w-full">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop" 
+                 alt="Programación PLC y HMI" 
+                 class="rounded-lg shadow-xl w-full">
           </div>
+          <!-- Texto derecha -->
           <div>
-            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-4">Automatización de Máquinas</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Modernizamos tu maquinaria existente con sistemas de control automatizados. 
-              Desde simples automatizaciones hasta sistemas complejos de control, 
-              mejoramos la productividad y reducimos errores operativos.
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Programación PLC y HMI</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Desarrollo de programas para controladores lógicos programables (PLC) y 
+              interfaces humano-máquina (HMI). Especialistas en sistemas Siemens, Allen Bradley, 
+              y las principales marcas del mercado industrial.
             </p>
-            <button class="bg-[var(--azul-electrico)] hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+            <button class="btn-tecmova">
               ¡VER MÁS INFORMACIÓN!
             </button>
           </div>
@@ -186,107 +246,221 @@
     </section>
 
     <!-- Sección de Servicios Específicos -->
-    <section class="py-16 md:py-20 bg-gray-50">
+    <section class="py-16 md:py-20 bg-white">
       <div class="container mx-auto px-4 md:px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">
-          Nuestros Servicios Especializados
-        </h2>
+        <h2 class="text-3xl font-bold text-center mb-12 text-[var(--azul-oscuro)]">Nuestros Servicios Especializados</h2>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <!-- Programación PLC y HMI -->
-          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
-            <div class="mb-4">
-              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Programación PLC y HMI</h3>
-            <p class="text-gray-600 mb-4">
-              Desarrollo de programas para control lógico y interfaces humano-máquina intuitivas.
+        <!-- Servicios de Automatización Industrial -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Servicios de Automatización Industrial</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Optimizamos operaciones industriales a través de tableros de control, especializándonos en la automatización de maquinaria, 
+              fajas transportadoras, sistemas de pesaje y más.
             </p>
-            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
-              Saber más →
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
             </button>
           </div>
+          <div class="order-1 md:order-2">
+            <img src="imagenes/automatizacion.servicios.industriales.jpg" 
+                 alt="Servicios de Automatización Industrial" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+        </div>
 
-          <!-- Configuración de Variadores -->
-          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
-            <div class="mb-4">
-              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Configuración de Variadores (VFD)</h3>
-            <p class="text-gray-600 mb-4">
-              Ajuste y optimización de variadores de frecuencia para control eficiente de motores.
+        <!-- Automatización de Máquinas -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div>
+            <img src="imagenes/automatizacion.maquinas.jpg" 
+                 alt="Automatización de Máquinas" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Automatización de Máquinas</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos automatización para máquinas estuchadora, llenadora, empaquetadora, envasadora, etc. 
+              Utilizando tecnologías como PLC y HMI para mejorar la eficiencia y productividad.
             </p>
-            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
-              Saber más →
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
             </button>
           </div>
+        </div>
 
-          <!-- Módulos de Entrenamiento -->
-          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
-            <div class="mb-4">
-              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Módulos de Entrenamiento PLC</h3>
-            <p class="text-gray-600 mb-4">
-              Fabricación de módulos educativos para universidades e instituciones técnicas.
+        <!-- Automatización en Minería -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Automatización en Minería</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Brindamos servicios de automatización y control para maquinaria pesada en la industria minera, 
+              enfocándonos en mejorar la eficiencia y seguridad operativa mediante tecnología hidráulica.
             </p>
-            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
-              Saber más →
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
             </button>
           </div>
+          <div class="order-1 md:order-2">
+            <img src="imagenes/automatizacion.mineria.jpg" 
+                 alt="Automatización en Minería" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+        </div>
 
-          <!-- Tableros Eléctricos de Control -->
-          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
-            <div class="mb-4">
-              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Tableros Eléctricos de Control</h3>
-            <p class="text-gray-600 mb-4">
-              Diseño y construcción de tableros de control industrial con estándares de seguridad.
+        <!-- Automatización en Laboratorios -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div>
+            <img src="imagenes/automatizacion.laboratorios.jpg" 
+                 alt="Automatización en Laboratorios" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Automatización en Laboratorios</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos servicios especializados para laboratorios, incluyendo la automatización de autoclaves, 
+              cámaras climáticas y registro de datos en pruebas de concreto para diferentes industrias.
             </p>
-            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
-              Saber más →
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
             </button>
           </div>
+        </div>
 
-          <!-- Automatización de Juegos Mecánicos -->
-          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
-            <div class="mb-4">
-              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Automatización de Juegos Mecánicos</h3>
-            <p class="text-gray-600 mb-4">
-              Sistemas de control seguros y confiables para parques de entretenimiento.
+        <!-- Automatización de Sistemas de Pesaje -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Automatización de Sistemas de Pesaje</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Brindamos servicios de automatización de sistemas de pesaje, mejorando la precisión y eficiencia 
+              en la medición de insumos mediante tecnología avanzada, asegurando cálculos exactos y consistentes.
             </p>
-            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
-              Saber más →
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
             </button>
           </div>
+          <div class="order-1 md:order-2">
+            <img src="imagenes/automatizacion.sistemas.pesaje.jpg" 
+                 alt="Automatización de Sistemas de Pesaje" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+        </div>
 
-          <!-- Sistemas de Pesaje -->
-          <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
-            <div class="mb-4">
-              <svg class="w-12 h-12 text-[var(--azul-electrico)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[var(--azul-oscuro)] mb-3">Sistemas de Pesaje Automático</h3>
-            <p class="text-gray-600 mb-4">
-              Integración de sistemas de pesaje precisos para procesos industriales.
+        <!-- Automatización de Juegos Mecánicos -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div>
+            <img src="imagenes/automatizacion.juegos.mecanicos.jpg" 
+                 alt="Automatización de Juegos Mecánicos" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Automatización de Juegos Mecánicos</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos servicios de automatización y mantenimiento eléctrico en juegos mecánicos, 
+              optimizando su funcionamiento y garantizando una experiencia segura y fluida. 
+              Utilizamos tecnología avanzada para lograr un control más preciso y eficiente de los sistemas de operación.
             </p>
-            <button class="text-[var(--azul-electrico)] font-semibold hover:text-blue-600 transition">
-              Saber más →
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
             </button>
+          </div>
+        </div>
+
+        <!-- Programación de Equipos -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Programación de Equipos</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos automatización industrial con PLC y HMI para mejorar la eficiencia en diversas máquinas. 
+              También brindamos servicios de actualización, control remoto, integración de bases de datos, 
+              reporte de maquinaria y redes industriales.
+            </p>
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
+            </button>
+          </div>
+          <div class="order-1 md:order-2">
+            <img src="imagenes/automatizacion.programacion.equipos.jpg" 
+                 alt="Programación de Equipos" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+        </div>
+
+        <!-- Variadores de Velocidad -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div>
+            <img src="imagenes/automatizacion.variadores.velocidad.jpg" 
+                 alt="Variadores de Velocidad" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Variadores de Velocidad</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos servicios para Variadores de Velocidad. También brindamos servicios de actualización, 
+              control remoto, integración de bases de datos, reporte de maquinaria y redes industriales.
+            </p>
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
+            </button>
+          </div>
+        </div>
+
+        <!-- Módulos de Entrenamiento PLC -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Módulos de Entrenamiento PLC</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos servicios de diseño y fabricación de módulos de entrenamiento PLC para universidades, 
+              instituciones, etc. También brindamos servicios de actualización, control remoto, integración de bases de datos, 
+              reporte de maquinaria y redes industriales.
+            </p>
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
+            </button>
+          </div>
+          <div class="order-1 md:order-2">
+            <img src="imagenes/automatizacion.modulos.entrenamiento.jpg" 
+                 alt="Módulos de Entrenamiento PLC" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+        </div>
+
+        <!-- Tableros Eléctricos de Control -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+          <div>
+            <img src="imagenes/automatizacion.tableros.electricos.jpg" 
+                 alt="Tableros Eléctricos de Control" 
+                 class="rounded-lg shadow-xl w-full">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Tableros Eléctricos de Control</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Brindamos automatización con tableros eléctricos para maquinaria industrial, usando PLC y HMI 
+              para mejorar la eficiencia. También proporcionamos servicios de diagnóstico, mantenimiento, diseño 
+              e implementación de tableros, así como comisionamiento.
+            </p>
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
+            </button>
+          </div>
+        </div>
+
+        <!-- Pruebas de Módulos de Entrenamiento PLC -->
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold text-[var(--azul-oscuro)] mb-6">Pruebas de Módulos de Entrenamiento PLC</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Ofrecemos servicios de diseño y fabricación de módulos de entrenamiento PLC para universidades, 
+              instituciones, etc. También brindamos servicios de actualización, control remoto, integración de bases de datos, 
+              reporte de maquinaria y redes industriales.
+            </p>
+            <button class="btn-tecmova">
+              ¡VER MÁS INFORMACIÓN!
+            </button>
+          </div>
+          <div class="order-1 md:order-2">
+            <img src="imagenes/automatizacion.pruebas.modulos.jpg" 
+                 alt="Pruebas de Módulos de Entrenamiento PLC" 
+                 class="rounded-lg shadow-xl w-full">
           </div>
         </div>
       </div>
