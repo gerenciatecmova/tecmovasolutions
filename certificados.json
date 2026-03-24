@@ -33,11 +33,20 @@
   },
   "48002574": {
     "nombre": "Henry pariansullca Otcane",
-    "curso": "Automatización con PLC Siemens",
+    "curso": "Electricidad Industrial",
     "fechaCurso": "23/02/2026",
     "duracion": "40 horas",
     "fechaEmision": "23/03/2026",
     "imagen": "./certificados/48002574_certificado.jpg",
+    "nota": "17"
+  },
+  "73014784": {
+    "nombre": "Henry pariansullca Otcane",
+    "curso": "Electricidad Industrial",
+    "fechaCurso": "23/02/2026",
+    "duracion": "40 horas",
+    "fechaEmision": "23/03/2026",
+    "imagen": "./certificados/73014784_certificado.jpg",
     "nota": "17"
   }
 }
