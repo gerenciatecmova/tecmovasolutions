@@ -1,70 +1,130 @@
 {
   "12345678": {
     "nombre": "Juan Pérez García",
-    "curso": "Automatización PLC",
-    "fechaCurso": "Enero-Marzo 2025",
-    "duracion": "120 horas",
-    "imagen": "./certificados/12345678_certificado.jpg"
+    "certificados": [
+      {
+        "curso": "Automatización PLC",
+        "fechaCurso": "Enero-Marzo 2025",
+        "duracion": "120 horas",
+        "imagen": "./certificados/12345678_certificado.jpg",
+        "fechaEmision": "15/03/2025",
+        "nota": "Aprobado"
+      }
+    ]
   },
   "87654321": {
     "nombre": "María Gómez López",
-    "curso": "Electricidad Industrial",
-    "fechaCurso": "Feb-Marzo 2025",
-    "duracion": "80 horas",
-    "imagen": "./certificados/87654321_certificado.jpg"
+    "certificados": [
+      {
+        "curso": "Electricidad Industrial",
+        "fechaCurso": "Feb-Marzo 2025",
+        "duracion": "80 horas",
+        "imagen": "./certificados/87654321_certificado.jpg",
+        "fechaEmision": "10/03/2025",
+        "nota": "Aprobado"
+      }
+    ]
   },
   "75591905": {
     "nombre": "Kenin Risalbe Melgar",
-    "curso": "Automatización con PLC Siemens",
-    "fechaCurso": "21/02/2026",
-    "duracion": "1 mes",
-    "fechaEmision": "21/03/2026",
-    "imagen": "./certificados/75591905_certificado.jpg",
-    "nota": "17"
+    "certificados": [
+      {
+        "curso": "Automatización con PLC Siemens",
+        "fechaCurso": "21/02/2026",
+        "duracion": "1 mes",
+        "fechaEmision": "21/03/2026",
+        "imagen": "./certificados/75591905_certificado.jpg",
+        "nota": "17"
+      }
+    ]
   },
   "48592613": {
     "nombre": "Jose Huanca Alvino",
-    "curso": "Automatización con PLC Siemens",
-    "fechaCurso": "22/02/2026",
-    "duracion": "1 mes",
-    "fechaEmision": "22/03/2026",
-    "imagen": "./certificados/48592613_certificado.jpg",
-    "nota": "17"
+    "certificados": [
+      {
+        "curso": "Automatización con PLC Siemens",
+        "fechaCurso": "22/02/2026",
+        "duracion": "1 mes",
+        "fechaEmision": "22/03/2026",
+        "imagen": "./certificados/48592613_certificado.jpg",
+        "nota": "17"
+      }
+    ]
   },
   "48002574": {
     "nombre": "Henry pariansullca Otcane",
-    "curso": "Electricidad Industrial",
-    "fechaCurso": "23/02/2026",
-    "duracion": "40 horas",
-    "fechaEmision": "23/03/2026",
-    "imagen": "./certificados/48002574_certificado.jpg",
-    "nota": "17"
+    "certificados": [
+      {
+        "curso": "Electricidad Industrial",
+        "fechaCurso": "23/02/2026",
+        "duracion": "40 horas",
+        "fechaEmision": "23/03/2026",
+        "imagen": "./certificados/48002574_certificado.jpg",
+        "nota": "17"
+      }
+    ]
   },
   "73014784": {
     "nombre": "Alberto Ninalaya Ayre",
-    "curso": "Electricidad Industrial",
-    "fechaCurso": "23/02/2026",
-    "duracion": "40 horas",
-    "fechaEmision": "23/03/2026",
-    "imagen": "./certificados/73014784_certificado.jpg",
-    "nota": "17"
+    "certificados": [
+      {
+        "curso": "Electricidad Industrial",
+        "fechaCurso": "23/02/2026",
+        "duracion": "40 horas",
+        "fechaEmision": "23/03/2026",
+        "imagen": "./certificados/73014784_certificado.jpg",
+        "nota": "17"
+      }
+    ]
   },
   "72489225": {
     "nombre": "Menly Alexis Javier Taquire",
-    "curso": "Automatización con PLC Siemens Basico",
-    "fechaCurso": "1/03/2026",
-    "duracion": "80 horas",
-    "fechaEmision": "14/03/2026",
-    "imagen": "./certificados/72489225_plcSB_certificado.jpg",
-    "nota": "18"
+    "certificados": [
+      {
+        "curso": "Automatización con PLC Siemens Basico",
+        "fechaCurso": "1/03/2026",
+        "duracion": "80 horas",
+        "fechaEmision": "14/03/2026",
+        "imagen": "./certificados/72489225_plcSB_certificado.jpg",
+        "nota": "18"
+      },
+      {
+        "curso": "Automatización con PLC Siemens Avanzado",
+        "fechaCurso": "15/03/2026",
+        "duracion": "80 horas",
+        "fechaEmision": "1/04/2026",
+        "imagen": "./certificados/72489225_plcSA_certificado.jpg",
+        "nota": "18"
+      }
+    ]
   },
-  "72489225": {
-    "nombre": "Menly Alexis Javier Taquire",
-    "curso": "Automatización con PLC Siemens Avanzado",
-    "fechaCurso": "15/03/2026",
-    "duracion": "80 horas",
-    "fechaEmision": "1/04/2026",
-    "imagen": "./certificados/72489225_plcSA_certificado.jpg",
-    "nota": "18"
+  "11111111": {
+    "nombre": "Carlos Rodríguez Martínez",
+    "certificados": [
+      {
+        "curso": "Electricidad Industrial",
+        "fechaCurso": "Enero-Febrero 2025",
+        "duracion": "80 horas",
+        "imagen": "./certificados/11111111_electricidad.jpg",
+        "fechaEmision": "28/02/2025",
+        "nota": "18"
+      },
+      {
+        "curso": "Automatización con PLC Siemens",
+        "fechaCurso": "Marzo-Abril 2025",
+        "duracion": "120 horas",
+        "imagen": "./certificados/11111111_plc.jpg",
+        "fechaEmision": "30/04/2025",
+        "nota": "17"
+      },
+      {
+        "curso": "Diseño y Armado de Tableros Eléctricos",
+        "fechaCurso": "Mayo-Junio 2025",
+        "duracion": "100 horas",
+        "imagen": "./certificados/11111111_tableros.jpg",
+        "fechaEmision": "30/06/2025",
+        "nota": "19"
+      }
+    ]
   }
 }
