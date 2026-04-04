@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Certificado - TECMOVA SOLUTIONS</title>
+    <meta name="description" content="Ver certificado de capacitación técnica. Consulta los detalles de tu certificado de electricidad, PLC o automatización industrial en TECMOVA SOLUTIONS.">
+    <meta name="keywords" content="ver certificado, certificado técnico, electricidad, PLC, automatización, TECMOVA SOLUTIONS, consulta de certificado">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Ver Certificado - TECMOVA SOLUTIONS">
+    <meta property="og:description" content="Consulta los detalles de tu certificado de capacitación técnica.">
+    <meta property="og:type" content="website">
+    <title>Ver Certificado | TECMOVA SOLUTIONS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --azul-electrico: #1E5EFF;
             --azul-oscuro: #0A2342;
+            --gris-metalico: #7D8896;
         }
         
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
         
         .certificate-container {
@@ -192,9 +202,9 @@
         <p>&copy; 2025 TECMOVA SOLUTIONS – Todos los derechos reservados.</p>
     </footer>
 
-    <script>
+    <script defer>
         // ============================================
-        // CONFIGURACIÓN
+        // CONFIGURACIÓN OPTIMIZADA
         // ============================================
         const CERTIFICADOS_JSON_URL = './certificados.json';
         
@@ -202,19 +212,97 @@
             // Datos de respaldo (se usan si el JSON no carga)
             "12345678": {
                 "nombre": "Juan Pérez García",
-                "curso": "Automatización PLC",
-                "fechaCurso": "Enero-Marzo 2025",
-                "duracion": "120 horas",
-                "imagen": "./certificados/12345678_certificado.jpg",
-                "nota": "Aprobado"
+                "certificados": [
+                    {
+                        "curso": "Automatización PLC",
+                        "fechaCurso": "Enero-Marzo 2025",
+                        "duracion": "120 horas",
+                        "imagen": "./certificados/12345678_certificado.jpg",
+                        "fechaEmision": "15/03/2025",
+                        "nota": "Aprobado"
+                    }
+                ]
             },
             "87654321": {
                 "nombre": "María Gómez López",
-                "curso": "Electricidad Industrial",
-                "fechaCurso": "Feb-Marzo 2025",
-                "duracion": "80 horas",
-                "imagen": "./certificados/87654321_certificado.jpg",
-                "nota": "Aprobado"
+                "certificados": [
+                    {
+                        "curso": "Electricidad Industrial",
+                        "fechaCurso": "Feb-Marzo 2025",
+                        "duracion": "80 horas",
+                        "imagen": "./certificados/87654321_certificado.jpg",
+                        "fechaEmision": "10/03/2025",
+                        "nota": "Aprobado"
+                    }
+                ]
+            },
+            "75591905": {
+                "nombre": "Kenin Risalbe Melgar",
+                "certificados": [
+                    {
+                        "curso": "Automatización con PLC Siemens",
+                        "fechaCurso": "21/02/2026",
+                        "duracion": "120 horas",
+                        "fechaEmision": "21/03/2026",
+                        "imagen": "./certificados/75591905_certificado.jpg",
+                        "nota": "17"
+                    }
+                ]
+            },
+            "48592613": {
+                "nombre": "Jose Huanca Alvino",
+                "certificados": [
+                    {
+                        "curso": "Automatización con PLC Siemens",
+                        "fechaCurso": "22/02/2026",
+                        "duracion": "120 horas",
+                        "fechaEmision": "22/03/2026",
+                        "imagen": "./certificados/48592613_certificado.jpg",
+                        "nota": "17"
+                    }
+                ]
+            },
+            "48002574": {
+                "nombre": "Henry pariansullca Otcane",
+                "certificados": [
+                    {
+                        "curso": "Automatización con PLC Siemens",
+                        "fechaCurso": "23/02/2026",
+                        "duracion": "120 horas",
+                        "fechaEmision": "23/03/2026",
+                        "imagen": "./certificados/48002574_certificado.jpg",
+                        "nota": "17"
+                    }
+                ]
+            },
+            "11111111": {
+                "nombre": "Carlos Rodríguez Martínez",
+                "certificados": [
+                    {
+                        "curso": "Electricidad Industrial",
+                        "fechaCurso": "Enero-Febrero 2025",
+                        "duracion": "80 horas",
+                        "imagen": "./certificados/11111111_electricidad.jpg",
+                        "fechaEmision": "28/02/2025",
+                        "nota": "18"
+                    },
+                    {
+                        "curso": "Automatización con PLC Siemens",
+                        "fechaCurso": "Marzo-Abril 2025",
+                        "duracion": "120 horas",
+                        "imagen": "./certificados/11111111_plc.jpg",
+                        "fechaEmision": "30/04/2025",
+                        "nota": "17"
+                    },
+                    {
+                        "curso": "Diseño y Armado de Tableros Eléctricos",
+                        "fechaCurso": "Mayo-Junio 2025",
+                        "duracion": "100 horas",
+                        "imagen": "./certificados/11111111_tableros.jpg",
+                        "fechaEmision": "30/06/2025",
+                        "nota": "19"
+                    }
+                ]
             }
         };
         
@@ -274,64 +362,87 @@
             }
         }
         
-        // Mostrar certificado encontrado
-        function mostrarCertificado(content, certificado, dni) {
-            content.innerHTML = `
+        // Mostrar certificados encontrados
+        function mostrarCertificado(content, alumno, dni) {
+            const certificados = alumno.certificados;
+            const cantidadCertificados = certificados.length;
+            
+            let html = `
                 <div class="certificate-card">
                     <div class="certificate-header">
-                        <h1 class="certificate-title">🎓 Certificado de Competencia</h1>
+                        <h1 class="certificate-title">🎓 Certificados de Competencia</h1>
                         <p class="certificate-subtitle">TECMOVA SOLUTIONS</p>
-                        <p style="color: #9CA3AF; font-size: 0.9rem; margin-top: 0.5rem;">Código: TEC-2025-${dni.slice(-3)}</p>
-                    </div>
-                    
-                    <div class="student-info">
-                        <div class="info-row">
-                            <span class="info-label">👤 Alumno:</span>
-                            <span class="info-value">${certificado.nombre}</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">🆔 DNI:</span>
-                            <span class="info-value">${dni}</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">📚 Curso:</span>
-                            <span class="info-value">${certificado.curso}</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">📅 Período del Curso:</span>
-                            <span class="info-value">${certificado.fechaCurso || 'No especificado'}</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">⏱️ Duración:</span>
-                            <span class="info-value">${certificado.duracion || 'No especificada'}</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">📆 Fecha de Emisión:</span>
-                            <span class="info-value">${certificado.fechaEmision || new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">📝 Calificación:</span>
-                            <span class="info-value" style="color: var(--azul-electrico); font-weight: bold;">${certificado.nota || 'Aprobado'}</span>
+                        <div class="student-summary">
+                            <div class="info-row">
+                                <span class="info-label">👤 Alumno:</span>
+                                <span class="info-value">${alumno.nombre}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">🆔 DNI:</span>
+                                <span class="info-value">${dni}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">� Total de Certificados:</span>
+                                <span class="info-value" style="color: var(--azul-electrico); font-weight: bold;">${cantidadCertificados} certificado(s)</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="certificate-image-container">
-                        <p style="color: #6B7280; margin-bottom: 1rem; font-size: 0.9rem;">Vista previa del certificado:</p>
-                        <img src="${certificado.imagen}" 
-                             alt="Certificado de ${certificado.nombre}" 
-                             class="certificate-image"
-                             onerror="this.src='./certificados/placeholder.jpg'; this.alt='Imagen no disponible'">
+                    <div class="certificates-list">
+                        ${certificados.map((certificado, index) => `
+                            <div class="certificate-item" style="border: 2px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem; background: #f9fafb;">
+                                <div class="certificate-number" style="text-align: center; margin-bottom: 1rem;">
+                                    <span style="background: var(--azul-electrico); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-weight: bold; font-size: 0.9rem;">
+                                        Certificado ${index + 1} de ${cantidadCertificados}
+                                    </span>
+                                </div>
+                                
+                                <div class="certificate-details">
+                                    <div class="info-row">
+                                        <span class="info-label">📚 Curso:</span>
+                                        <span class="info-value">${certificado.curso}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">📅 Período del Curso:</span>
+                                        <span class="info-value">${certificado.fechaCurso || 'No especificado'}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">⏱️ Duración:</span>
+                                        <span class="info-value">${certificado.duracion || 'No especificada'}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">📆 Fecha de Emisión:</span>
+                                        <span class="info-value">${certificado.fechaEmision || new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="info-label">📝 Calificación:</span>
+                                        <span class="info-value" style="color: var(--azul-electrico); font-weight: bold;">${certificado.nota || 'Aprobado'}</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="certificate-image-container" style="text-align: center; margin-top: 1.5rem;">
+                                    <p style="color: #6B7280; margin-bottom: 1rem; font-size: 0.9rem;">Vista previa del certificado:</p>
+                                    <img src="${certificado.imagen}" 
+                                         alt="Certificado de ${alumno.nombre} - ${certificado.curso}" 
+                                         class="certificate-image"
+                                         style="max-width: 100%; height: auto; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+                                         loading="lazy"
+                                         decoding="async"
+                                         onerror="this.src='./certificados/placeholder.jpg'; this.alt='Imagen no disponible'">
+                                </div>
+                            </div>
+                        `).join('')}
                     </div>
                     
-                    <button class="btn-tecmova" onclick="descargarCertificado('TEC-2025-${dni.slice(-3)}', '${certificado.nombre}', '${certificado.imagen}')">
-                        📥 DESCARGAR CERTIFICADO
-                    </button>
-                    
-                    <a href="certificados.html" class="btn-secondary">
-                        ← Volver a Certificados
-                    </a>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="certificados.html" class="btn-secondary" style="display: inline-block;">
+                            ← Volver a Certificados
+                        </a>
+                    </div>
                 </div>
             `;
+            
+            content.innerHTML = html;
         }
         
         // Mostrar mensaje de no encontrado
@@ -353,20 +464,6 @@
                     </a>
                 </div>
             `;
-        }
-        
-        // Función para descargar certificado
-        function descargarCertificado(codigo, nombre, imagenSrc) {
-            const link = document.createElement('a');
-            link.href = imagenSrc;
-            link.download = `certificado_${nombre.replace(/\s+/g, '_').toLowerCase()}.jpg`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            setTimeout(() => {
-                alert(`¡Certificado descargado exitosamente!\n\n🎓 Alumno: ${nombre}\n📋 Código: ${codigo}`);
-            }, 500);
         }
         
         // Cargar al iniciar

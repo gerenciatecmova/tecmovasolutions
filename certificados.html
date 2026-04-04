@@ -3,56 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificados de Alumnos - TECMOVA SOLUTIONS</title>
+    <meta name="description" content="Busca y verifica certificados de capacitaciones técnicas en TECMOVA SOLUTIONS. Ingresa tu DNI para consultar tus certificados de electricidad, PLC y automatización industrial.">
+    <meta name="keywords" content="certificados, capacitaciones técnicas, electricidad, PLC, automatización industrial, TECMOVA SOLUTIONS, verificación de certificados">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Certificados de Alumnos - TECMOVA SOLUTIONS">
+    <meta property="og:description" content="Busca y verifica tus certificados de capacitaciones técnicas en electricidad, PLC y automatización industrial.">
+    <meta property="og:type" content="website">
+    <meta name="author" content="TECMOVA SOLUTIONS">
+    <title>Certificados de Alumnos | TECMOVA SOLUTIONS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/common.css">
     <style>
-        :root {
-            --azul-electrico: #1E5EFF;
-            --azul-oscuro: #0A2342;
-        }
-        
+        /* Estilos específicos solo para esta página */
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .header-nav {
-            background: var(--azul-oscuro);
-            padding: 1rem 0;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a.active {
-            color: var(--azul-electrico);
-            font-weight: 600;
         }
         
         .main-container {
             max-width: 1200px;
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 6rem 1rem 2rem;
         }
         
         .page-title {
@@ -75,6 +49,7 @@
             padding: 0.75rem 1rem;
             border: 2px solid #e5e7eb;
             border-radius: 0.5rem;
+            margin-bottom: 1rem;
         }
         
         .search-button {
@@ -85,6 +60,12 @@
             border-radius: 0.5rem;
             font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-button:hover {
+            background: #0056CC;
+            transform: translateY(-1px);
         }
         
         .certificates-grid {
@@ -98,6 +79,11 @@
             border-radius: 1rem;
             padding: 1.5rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
         }
         
         .student-name {
@@ -112,23 +98,12 @@
             margin-bottom: 1rem;
         }
         
-        .btn-tecmova {
-            display: block;
-            width: 100%;
-            background: var(--azul-electrico);
-            color: white;
-            border: none;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .footer {
-            background: var(--azul-oscuro);
-            color: white;
+        .search-section h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--azul-oscuro);
+            margin-bottom: 1.5rem;
             text-align: center;
-            padding: 2rem 0;
         }
     </style>
 </head>
@@ -207,50 +182,30 @@
     </footer>
 
  
-    <script>
-        // Base de datos de certificados con imágenes
-        const certificadosDB = {
-            '12345678': {
-                nombre: 'Juan Pérez García',
-                curso: 'Automatización Industrial con PLC Siemens',
-                fecha: '15 de Marzo de 2025',
-                imagen: 'imagenes/certificado_juan_perez.jpg',
-                codigo: 'TEC-2025-001'
-            },
-            '87654321': {
-                nombre: 'María Gómez López',
-                curso: 'Electricidad Industrial',
-                fecha: '10 de Marzo de 2025',
-                imagen: 'imagenes/certificado_maria_gomez.jpg',
-                codigo: 'TEC-2025-002'
-            },
-            '45678912': {
-                nombre: 'Carlos Rodríguez Martínez',
-                curso: 'Diseño y Armado de Tableros Eléctricos',
-                fecha: '5 de Marzo de 2025',
-                imagen: 'imagenes/certificado_carlos_rodriguez.jpg',
-                codigo: 'TEC-2025-003'
-            }
-        };
-        
+    <script defer>
+        // Optimización: Defer loading y código más eficiente
         function buscarCertificado(event) {
             event.preventDefault();
             const dni = document.getElementById('searchInput').value.trim();
             
-            if (dni === '') {
+            if (!dni) {
                 alert('Por favor, ingresa un DNI o código de certificado.');
                 return;
             }
             
-            // Redirigir a la página de ver certificado
+            // Redirigir directamente - más eficiente que buscar localmente
             window.location.href = `ver-certificado.html?dni=${encodeURIComponent(dni)}`;
         }
         
-        // Permitir búsqueda al presionar Enter
-        document.getElementById('searchInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                buscarCertificado(event);
-            }
+        // Event listeners optimizados
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchForm = document.querySelector('form');
+            const searchInput = document.getElementById('searchInput');
+            
+            searchForm.addEventListener('submit', buscarCertificado);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') buscarCertificado(e);
+            });
         });
     </script>
 </body>
