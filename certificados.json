@@ -48,5 +48,14 @@
     "fechaEmision": "23/03/2026",
     "imagen": "./certificados/73014784_certificado.jpg",
     "nota": "17"
+  },
+  "72489225": {
+    "nombre": "Menly Alexis Javier Taquire",
+    "curso": "Automatización con PLC Siemens",
+    "fechaCurso": "15/03/2026",
+    "duracion": "80 horas",
+    "fechaEmision": "1/04/2026",
+    "imagen": "./certificados/72489225_certificado.jpg",
+    "nota": "18"
   }
 }
