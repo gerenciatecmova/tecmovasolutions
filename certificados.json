@@ -126,5 +126,34 @@
         "nota": "19"
       }
     ]
+  },
+  "73053793": {
+    "nombre": "Henry Fernando Munarriz Gamboa",
+    "certificados": [
+      {
+        "curso": "Electricidad Industrial",
+        "fechaCurso": "Enero-Febrero 2025",
+        "duracion": "80 horas",
+        "imagen": "./certificados/73053793_electricidad.jpg",
+        "fechaEmision": "28/02/2025",
+        "nota": "18"
+      },
+      {
+        "curso": "Automatización con PLC Siemens Basico",
+        "fechaCurso": "Marzo-Abril 2025",
+        "duracion": "80 horas",
+        "imagen": "./certificados/73053793_plcsb.jpg",
+        "fechaEmision": "27/03/2025",
+        "nota": "19"
+      },
+      {
+        "curso": "Automatización con PLC Siemens Avanzado",
+        "fechaCurso": "Mayo-Junio 2025",
+        "duracion": "80 horas",
+        "imagen": "./certificados/73053793_plcsa.jpg",
+        "fechaEmision": "30/04/2025",
+        "nota": "18"
+      }
+    ]
   }
 }
