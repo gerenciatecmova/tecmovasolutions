@@ -29,12 +29,33 @@
     "nombre": "Kenin Risalbe Melgar",
     "certificados": [
       {
-        "curso": "Automatización con PLC Siemens",
+        "curso": "Electricidad Industrial",
+        "fechaCurso": "5/02/2026",
+        "duracion": "1 mes",
+        "fechaEmision": "12/01/2026",
+        "imagen": "./certificados/75591905_electricidad.jpg",
+        "nota": "19"
+      },{
+        "curso": "Automatización con PLC Siemens Basico",
+        "fechaCurso": "13/02/2026",
+        "duracion": "1 mes",
+        "fechaEmision": "20/02/2026",
+        "imagen": "./certificados/75591905_PLCB.jpg",
+        "nota": "19"
+      },{
+        "curso": "Automatización con PLC Siemens Avanzado",
         "fechaCurso": "21/02/2026",
         "duracion": "1 mes",
-        "fechaEmision": "21/03/2026",
-        "imagen": "./certificados/75591905_certificado.jpg",
-        "nota": "17"
+        "fechaEmision": "27/03/2026",
+        "imagen": "./certificados/75591905_PLCA.jpg",
+        "nota": "18"
+      },{
+        "curso": "Diseño y armado de tableros con EPLAN",
+        "fechaCurso": "27/02/2026",
+        "duracion": "1 mes",
+        "fechaEmision": "15/03/2026",
+        "imagen": "./certificados/75591905_EPLAN.jpg",
+        "nota": "19"
       }
     ]
   },
