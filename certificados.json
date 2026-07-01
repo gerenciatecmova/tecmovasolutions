@@ -25,34 +25,47 @@
       }
     ]
   },
+  "04050923": {
+    "nombre": "Raúl Jaime Girón Retuerto",
+    "certificados": [
+      {
+        "curso": "Variadores de Velocidad",
+        "fechaCurso": "Mayo-Junio 2026",
+        "duracion": "40 horas",
+        "imagen": "./certificados/04050923_variadores.jpg",
+        "fechaEmision": "30/06/2026",
+        "nota": "19"
+      }
+    ]
+  },
   "75591905": {
     "nombre": "Kenin Risalbe Melgar",
     "certificados": [
       {
         "curso": "Electricidad Industrial",
         "fechaCurso": "5/02/2026",
-        "duracion": "1 mes",
+        "duracion": "120 horas",
         "fechaEmision": "12/01/2026",
         "imagen": "./certificados/75591905_electricidad.jpg",
         "nota": "19"
       },{
         "curso": "Automatización con PLC Siemens Basico",
         "fechaCurso": "13/02/2026",
-        "duracion": "1 mes",
+        "duracion": "120 horas",
         "fechaEmision": "20/02/2026",
         "imagen": "./certificados/75591905_PLCB.jpg",
         "nota": "19"
       },{
         "curso": "Automatización con PLC Siemens Avanzado",
         "fechaCurso": "21/02/2026",
-        "duracion": "1 mes",
+        "duracion": "120 horas",
         "fechaEmision": "27/03/2026",
         "imagen": "./certificados/75591905_PLCA.jpg",
         "nota": "18"
       },{
         "curso": "Diseño y armado de tableros con EPLAN",
         "fechaCurso": "27/02/2026",
-        "duracion": "1 mes",
+        "duracion": "120 horas",
         "fechaEmision": "15/03/2026",
         "imagen": "./certificados/75591905_EPLAN.jpg",
         "nota": "19"
