@@ -69,6 +69,13 @@
         "fechaEmision": "15/03/2026",
         "imagen": "./certificados/75591905_EPLAN.jpg",
         "nota": "19"
+      },{
+        "curso": "Variadores de Velocidad",
+        "fechaCurso": "27/02/2026",
+        "duracion": "120 horas",
+        "fechaEmision": "15/03/2026",
+        "imagen": "./certificados/75591905_VARIADORES.jpg",
+        "nota": "19"
       }
     ]
   },
